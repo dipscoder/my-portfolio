@@ -209,6 +209,14 @@ button {
         transform: rotate(360deg);
     }
 }
+@keyframes bounch {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
 
 /* Overlay */
 .overlay{
@@ -444,6 +452,7 @@ button {
 .home-img .img-box img{
     width: 100%;
     border-radius: 50%;
+    animation: bounch 1.5s ease infinite;
 }
 
 
