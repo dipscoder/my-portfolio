@@ -6,12 +6,14 @@
 
 /* Variables */
 :root{
-    --main-color: #e02f6b;
+    /* --main-color: #e02f6b; */
+    --main-color: #0362fc;
     --blue: #0000ff;
     --blue-dark: #18293c;
     --orange: #ffa500;
     --green-yellow: #cddc39;
-    --pink-light: #efa2b4;
+    /* --pink-light: #efa2b4; */
+    --baby-blue: #89CFF0;
     --cyan-light: #aef1ee;
     --white: #ffffff;
     --white-alpha-40: rgba(255,255,255,0.40); 
@@ -38,7 +40,7 @@ ul {
 }
 body{
     min-height: 100vh;
-    background-image: linear-gradient(to bottom right, var(--pink-light), var(--cyan-light));    
+    background-image: linear-gradient(to bottom right, var(--baby-blue), var(--cyan-light));    
     background-attachment: fixed;
     font-size: 16px;
     color: var(--blue-dark);
