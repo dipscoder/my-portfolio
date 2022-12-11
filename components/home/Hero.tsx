@@ -10,9 +10,8 @@ function Hero() {
       >
         <p className="text-xl mb-5">Hey, I'm Dipesh Jaiswal.</p>
         <h1 className="heroTitle inline-block max-w-2xl lg:max-w-4xl  w-auto relative text-5xl md:text-6xl lg:text-7xl tracking-tighter mb-10 font-bold heroShinyBg">
-          I enjoy <span className="heroShiny1 text-fun-pink">building</span> and{" "}
-          <span className="heroShiny2 text-fun-pink">designing</span> for the
-          web.
+          I love building the <span className="heroShiny1 text-fun-pink">web</span>, one {" "}
+          <span className="heroShiny2 text-fun-pink">pixel</span> at a time.
           <img
             className="sqD squiggle-hero-html w-16 top-[-90px] right-[5%] sm:top-[-90px] sm:right-[170px]"
             style={{ animationDelay: "0.1s" }}
@@ -26,7 +25,7 @@ function Hero() {
           <img
             className="sqD bottom-[-300px] -right-1/4 sm:right-[-20%] lg:bottom-[-310px] lg:right-[-120px] w-[400px]"
             style={{ animationDelay: "0.3s" }}
-            src="/static/doodles/hero/brayden.svg"
+            src="/static/doodles/hero/dipesh1.svg"
           />
           <img
             className="sqD hidden sm:block bottom-[-340px] left-[-180px]"
