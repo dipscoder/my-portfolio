@@ -7,7 +7,7 @@ import React, { ReactChildren } from "react";
 function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
   const pageTitle = `${
     currentPage === "Home"
-      ? "Brayden Wright - Web Developer, Designer, Creator."
+      ? "Dipesh Jaiswal - Web Developer, Designer, Creator."
       : `${currentPage} - BraydenTW.io`
   }`;
   console.log(currentPage);
@@ -90,7 +90,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
         }}
       ></noscript>
 
-      <main className="p-5 w-full flex-1 text-center">
+      <main className="p-8 w-full flex-1 text-center">
         <div className="hidden sm:block z-100">
           <Navbar currentPage={currentPage} />
         </div>
