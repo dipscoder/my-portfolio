@@ -31,14 +31,14 @@ export const routes: Route[] = [
   //   title: "Blog",
   //   path: "/blog",
   // },
-  {
-    title: "Projects",
-    path: "/projects",
-  },
-  {
-    title: "Designs",
-    path: "/designs",
-  },
+  // {
+  //   title: "Projects",
+  //   path: "/projects",
+  // },
+  // {
+  //   title: "Designs",
+  //   path: "/designs",
+  // },
 ];
 
 
@@ -74,20 +74,14 @@ export const footer: Footer = {
       links: [
         {
           name: "GitHub",
-          link: "https://github.com/braydentw",
+          link: "https://github.com/dispcoder",
           icon: "/static/icons/github-f.svg",
           leavesWebsite: true,
         },
         {
           name: "LinkedIn",
-          link: "https://www.linkedin.com/in/braydentw/",
+          link: "https://www.linkedin.com/in/dipesh-jaiswal/",
           icon: "/static/icons/linkedin-f.svg",
-          leavesWebsite: true,
-        },
-        {
-          name: "Dribbble",
-          link: "https://dribbble.com/braydentw",
-          icon: "/static/icons/dribbble-f.svg",
           leavesWebsite: true,
         },
         {
