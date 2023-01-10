@@ -1,7 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SectionTitle from "../global/SectionTitle";
+// import 'animate.css';
+
+
+const ImageData = [
+  {
+    id: 0,
+    src: "/static/about/coding.png",
+    alt: "Coding",
+  },
+  {
+    id: 1,
+    src: "/static/about/meditate.png",
+    alt: "Meditate",
+  },
+  {
+
+    id: 2,
+    src: "/static/about/exercise.png",
+    alt: "Exercise",
+  },
+]
+
+const imageStyle = {
+  animation: 'zoomInOut 4s 2s ease-in-out infinite',
+}
 
 export const AboutMe = () => {
+
+  const [counter, setCounter] = useState(0);
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((currentImageIndex + 1) % ImageData.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [currentImageIndex, ImageData.length]);
+
+  
   return (
     <div className="flex flex-col text-left justify-between pt-9 relative">
       <div id="learnmore">
@@ -40,12 +79,42 @@ export const AboutMe = () => {
             or hit the road together.
           </p>
         </div>
-        <div className="pt-10 md:w-1/2 wrappers">
-          <img
-            src="/static/dipeshjaiswal.jpg"
-            className="rounded-3xl w-1/2 m-auto image-wrapper"
+        <div id="" className="pt-10 md:w-1/2 image-container">
+
+        <img
+            src="/static/about/coding.png"
+            className="rounded-3xl w-1/2 m-auto  animate__animated animate__fadeIn"
             alt="My Picture"
           />
+          {/* {ImageData.map((image) => (
+            <img
+              key={image.id}
+              src={image.src}
+              className={`rounded-3xl w-1/2 m-auto  animate__animated ${counter === image.id ? 'animate__fadeIn' : 'animate__fadeOut'}}`}
+              alt={image.alt}
+            />
+          ))} */}
+
+{/* <img src={ImageData[currentImageIndex].src} style={imageStyle} className={`rounded-3xl w-1/2 m-auto`} /> */}
+
+
+          <img
+            src="/static/about/coding.png"
+            className="rounded-3xl w-1/2 m-auto  animate__animated animate__fadeIn"
+            alt="My Picture"
+          />
+          <img
+            src="/static/about/meditate.png"
+            className="rounded-3xl w-1/2 m-auto "
+            alt="My Picture"
+          />
+          <img
+            src="/static/about/exercise.png"
+            className="rounded-3xl w-1/2 m-auto"
+            alt="My Picture"
+          />
+
+          <p className="text-fun-pink text-center mt-4 text-xl">Code</p>
         </div>
       </div>
     </div>
