@@ -17,7 +17,6 @@ type Footer = {
   columns: FooterCol[]
   support: {
     buymeacoffee: string
-    paypal: string
     message: string
   }
 };
@@ -74,7 +73,7 @@ export const footer: Footer = {
       links: [
         {
           name: "GitHub",
-          link: "https://github.com/dispcoder",
+          link: "https://github.com/dipscoder",
           icon: "/static/icons/github-f.svg",
           leavesWebsite: true,
         },
@@ -84,15 +83,15 @@ export const footer: Footer = {
           icon: "/static/icons/linkedin-f.svg",
           leavesWebsite: true,
         },
-        {
-          name: "IndieHackers",
-          link: "https://indiehackers.com/braydentw",
-          icon: "/static/icons/indiehackers-f.svg",
-          leavesWebsite: true,
-        },
+        // {
+        //   name: "IndieHackers",
+        //   link: "https://indiehackers.com/braydentw",
+        //   icon: "/static/icons/indiehackers-f.svg",
+        //   leavesWebsite: true,
+        // },
         {
           name: "Email",
-          link: "mailto:contact@braydentw.io",
+          link: "mailto:dipeshjaiswal140@gmail.com",
           icon: "/static/icons/mail-f.svg",
           leavesWebsite: true,
         },
@@ -101,7 +100,6 @@ export const footer: Footer = {
   ],
   support: {
     buymeacoffee: "braydenw",
-    paypal: "braydentw",
     message: "I appreciate your support very much! 💙",
   },
 };

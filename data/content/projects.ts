@@ -6,7 +6,7 @@ const projects: Project[] = [
     id: 0,
     title: "Spotify Clone",
     desc: "A Music Playing Application which provide curated songs and lyrics from the Spotify API.",
-    img: "static/projects/spotify.png",
+    img: "/static/projects/spotify.png",
     link: "https://spotify-clone-client.netlify.app/",
     github: "https://github.com/dipscoder/spotify-clone",
     tags: ["React", "Context-API", "Material UI", "Express", "NodeJs", "Spotify-API"],

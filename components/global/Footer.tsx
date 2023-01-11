@@ -58,19 +58,6 @@ function Footer() {
                 </a>
               </div>
             )}
-            {footer.support.paypal !== "" && (
-              <div>
-                <a
-                  href={`https://paypal.me/${footer.support.paypal}`}
-                  target="_blank"
-                >
-                  <img
-                    src="/static/misc/paypal.svg"
-                    className="h-12 mr-2 hover:opacity-80 opacity-100 transition-opacity"
-                  />
-                </a>
-              </div>
-            )}
             <p className="text-fun-gray text-xs pt-1">
               {footer.support.message}
             </p>
@@ -110,18 +97,18 @@ function Footer() {
             </div>
           </div>
           <div className="mt-2 text-xs ">
-            Made by{" "}
+            © {new Date().getFullYear()}{" "}
             <a
-              href="mailto:contact@braydentw.io"
+              href="mailto:dipeshjaiswal140@gmail.com"
               className="text-fun-gray-light font-medium"
             >
-              Brayden Wright
+              Dipesh Jaiswal
             </a>
             . All rights reserved.
           </div>
         </p>
       </div>
-      <div className="mt-8 text-center sm:text-right sm:-mt-12">
+      {/* <div className="mt-8 text-center sm:text-right sm:-mt-12">
         <a
           className="w-auto inline-flex items-center sm:w-auto font-bold flex-shrink text-xs border border-fun-pink px-4 py-2 rounded-xl text-fun-pink cursor-pointer opacity-50"
           href="https://github.com/braydentw/braydentw.io"
@@ -136,7 +123,7 @@ function Footer() {
           />
           <span className="ml-2">View Source Code </span>
         </a>
-      </div>
+      </div> */}
     </footer>
   );
 }
