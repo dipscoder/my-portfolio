@@ -3,7 +3,7 @@ import Document, { Head, Html, Main, NextScript } from "next/document";
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" style={{scrollBehavior:'smooth'}}>
         <Head>
           <link
             rel="apple-touch-icon"

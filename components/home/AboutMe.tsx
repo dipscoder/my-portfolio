@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import SectionTitle from "../global/SectionTitle";
-// import 'animate.css';
-
 
 const ImageData = [
   {
@@ -15,19 +13,17 @@ const ImageData = [
     alt: "Meditate",
   },
   {
-
     id: 2,
     src: "/static/about/exercise.png",
     alt: "Exercise",
   },
-]
+];
 
 const imageStyle = {
-  animation: 'zoomInOut 4s 2s ease-in-out infinite',
-}
+  animation: "zoomInOut 4s 2s ease-in-out infinite",
+};
 
 export const AboutMe = () => {
-
   const [counter, setCounter] = useState(0);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -35,19 +31,18 @@ export const AboutMe = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((currentImageIndex + 1) % ImageData.length);
-    }, 4000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [currentImageIndex, ImageData.length]);
 
-  
   return (
     <div className="flex flex-col text-left justify-between pt-9 relative">
       <div id="learnmore">
         <SectionTitle title="About Me" />
       </div>
       <div className="flex flex-col justify-center md:flex-row">
-        <div className="md:w-1/2 text-fun-gray">
+        <div className="w-100 md:w-1/2 text-fun-gray">
           <p>
             As a <span className="text-fun-pink">Developer 👨‍💻</span> with over{" "}
             <span className="text-fun-pink">2 years of experience</span>, I have
@@ -79,13 +74,17 @@ export const AboutMe = () => {
             or hit the road together.
           </p>
         </div>
-        <div id="" className="pt-10 md:w-1/2 image-container">
-
-        <img
-            src="/static/about/coding.png"
-            className="rounded-3xl w-1/2 m-auto  animate__animated animate__fadeIn"
-            alt="My Picture"
-          />
+        <div className="pt-10 md:w-1/2 relative z-10">
+          <div className="absolute top-10 left-32 w-60 h-60 bg-fun-pink rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
+          <div className="absolute top-10 right-28 w-60 h-60 bg-fun-pink rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-16 left-40 w-60 h-60 bg-fun-pink rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+          <div className=" ">
+            <img
+              src="/static/about/coding.png"
+              className="rounded-3xl md:w-1/2 m-auto  animate__animated animate__fadeIn"
+              alt="My Picture"
+            />
+          </div>
           {/* {ImageData.map((image) => (
             <img
               key={image.id}
@@ -95,10 +94,9 @@ export const AboutMe = () => {
             />
           ))} */}
 
-{/* <img src={ImageData[currentImageIndex].src} style={imageStyle} className={`rounded-3xl w-1/2 m-auto`} /> */}
+          {/* <img src={ImageData[currentImageIndex].src} style={imageStyle} className={`rounded-3xl w-1/2 m-auto`} /> */}
 
-
-          <img
+          {/* <img
             src="/static/about/coding.png"
             className="rounded-3xl w-1/2 m-auto  animate__animated animate__fadeIn"
             alt="My Picture"
@@ -112,9 +110,9 @@ export const AboutMe = () => {
             src="/static/about/exercise.png"
             className="rounded-3xl w-1/2 m-auto"
             alt="My Picture"
-          />
+          /> */}
 
-          <p className="text-fun-pink text-center mt-4 text-xl">Code</p>
+          {/* <p className="text-fun-pink text-center mt-4 text-xl">Code</p> */}
         </div>
       </div>
     </div>
