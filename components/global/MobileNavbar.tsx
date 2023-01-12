@@ -2,17 +2,17 @@ import { useEffect, useState } from "react";
 
 import Link from "next/link";
 import {routes} from "@/data/global";
-import useDelayedRender from "use-delayed-render";
+// import useDelayedRender from "use-delayed-render";
 
 export default function MobileNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
-    isMenuOpen,
-    {
-      enterDelay: 20,
-      exitDelay: 300,
-    }
-  );
+  // const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
+  //   isMenuOpen,
+  //   {
+  //     enterDelay: 20,
+  //     exitDelay: 300,
+  //   }
+  // );
 
   function toggleMenu() {
     if (isMenuOpen) {
@@ -33,7 +33,7 @@ export default function MobileNavbar() {
   return (
     <nav>
       <div
-        className={`w-full justify-between flex items-center ${isMenuRendered && 'bg-bg'} p-5`}
+        className={`w-full justify-between flex items-center ${true && 'bg-bg'} p-5`}
         style={{ zIndex: 101 }}
       >
         <li className="list-none font-bold text-lg">
@@ -55,7 +55,7 @@ export default function MobileNavbar() {
           <CrossIcon data-hide={!isMenuOpen} />
         </button>
       </div>
-      {isMenuMounted && (
+      {/* {isMenuMounted && (
         <ul
           className={`menu flex flex-col absolute bg-bg
             ${isMenuRendered && "menuRendered"}`}
@@ -73,7 +73,7 @@ export default function MobileNavbar() {
             );
           })}
         </ul>
-      )}
+      )} */}
     </nav>
   );
 }
