@@ -23,21 +23,25 @@ type Footer = {
 
 export const routes: Route[] = [
   {
-    title: "Home",
-    path: "/",
+    title: "About",
+    path: "#about",
   },
   // {
   //   title: "Blog",
   //   path: "/blog",
   // },
-  // {
-  //   title: "Projects",
-  //   path: "/projects",
-  // },
-  // {
-  //   title: "Designs",
-  //   path: "/designs",
-  // },
+  {
+    title: "Experience",
+    path: "#experience",
+  },
+  {
+    title: "Projects",
+    path: "#projects",
+  },
+  {
+    title: "Resume",
+    path: "#resume",
+  },
 ];
 
 

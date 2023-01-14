@@ -100,7 +100,7 @@ const ExperienceSections = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <div className="flex flex-col text-left justify-between pt-6 relative">
+    <div id="experience" className="flex flex-col text-left justify-between pt-6 relative">
       <div id="learnmore">
         <SectionTitle title="My Experience" />
       </div>

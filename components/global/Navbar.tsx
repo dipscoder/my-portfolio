@@ -10,8 +10,8 @@ function Navbar({ currentPage }) {
           <span className="font-black text-xl flex items-center">
             <img
               className="mr-2 transform hover:rotate-360 hover:scale-75 transition-transform duration-500"
-              src="/static/logos/logo_no_text.svg"
-              width="60"
+              src="/static/logos/dipeshjaiswal_logo.png"
+              width="35"
             />
             {"DipeshJaiswal".split("").map((letter, index) => {
               return (
@@ -34,7 +34,7 @@ function Navbar({ currentPage }) {
                   : "opacity-40 hover:opacity-100 transition-opacity"
               }`}
             >
-              <Link href={item.path}>{item.title}</Link>
+              <a href={item.path}>{item.title}</a>
             </li>
           );
         })}

@@ -37,7 +37,7 @@ export const AboutMe = () => {
   }, [currentImageIndex, ImageData.length]);
 
   return (
-    <div className="flex flex-col text-left justify-between pt-9 relative">
+    <div id="about" className="flex flex-col text-left justify-between pt-9 relative">
       <div id="learnmore">
         <SectionTitle title="About Me" />
       </div>
