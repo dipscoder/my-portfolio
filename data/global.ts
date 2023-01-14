@@ -103,7 +103,7 @@ export const footer: Footer = {
     },
   ],
   support: {
-    buymeacoffee: "braydenw",
+    buymeacoffee: "dipeshjaiswal",
     message: "I appreciate your support very much! 💙",
   },
 };
