@@ -20,7 +20,7 @@ import ExperienceSections from "@/components/home/ExperienceSections";
 
 export default function Home() {
   return (
-    <Page currentPage="Home" meta={{ desc: "I'm a passionate web developer and designer coding beautiful websites and apps." }}>
+    <Page currentPage="Home" meta={{ desc: "I'm a passionate web developer who loves building beautiful websites and apps." }}>
       <Hero />
       <div className="mt-20 space-y-32">
         <AboutMe />

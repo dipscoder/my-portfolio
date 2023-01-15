@@ -7,7 +7,7 @@ import React, { ReactChildren } from "react";
 function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
   const pageTitle = `${
     currentPage === "Home"
-      ? "Dipesh Jaiswal - Web Developer, Designer, Creator."
+      ? "Dipesh Jaiswal - A Mindful Developer."
       : `${currentPage} - dipeshjaiwal.com`
   }`;
   console.log(currentPage);
@@ -44,19 +44,19 @@ function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
         <meta property="og:url" content="https://dipeshjaiswal.com/" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={desc} />
-        {/* <meta
+        <meta
           property="og:image"
           content="https://dipeshjaiswal.com/static/misc/og.png"
-        /> */}
+        />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://dipeshjaiswal.com/" />
         <meta property="twitter:title" content={pageTitle} />
         <meta property="twitter:description" content={desc} />
-        {/* <meta
+        <meta
           property="twitter:image"
           content="https://dipeshjaiswal.com/static/misc/og.png"
-        ></meta> */}
+        ></meta>
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}

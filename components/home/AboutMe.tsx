@@ -57,14 +57,14 @@ export const AboutMe = () => {
             collaboration and open communication, and I strive to create a
             positive and inclusive work environment for my team.
           </p>
-          <p className="pt-4">
+          {/* <p className="pt-4">
             In my free time, ☕ you can find me tinkering with new programming
             languages, collaborating with other developers on open-source
             projects, or simply exploring the vast{" "}
             <span className="text-fun-pink">world of the web</span>. I am
             constantly learning and looking for new opportunities to grow as a
             developer and make an impact.
-          </p>
+          </p> */}
           <p className="pt-4">
             Additionally, 🚴‍♀️ Cycling is one of my favorite hobbies, and I love
             hitting the trails on my bike or joining group rides on the
