@@ -15,7 +15,10 @@ function Navbar({ currentPage }) {
             />
             {"DipeshJaiswal".split("").map((letter, index) => {
               return (
-                <span key={index} className="hover:text-fun-pink hover:-mt-2 transition-all duration-500 hover:duration-100 click:goodbyeLetterAnim">
+                <span
+                  key={index}
+                  className="hover:text-fun-pink hover:-mt-2 transition-all duration-500 hover:duration-100 click:goodbyeLetterAnim"
+                >
                   {letter}
                 </span>
               );
@@ -34,7 +37,12 @@ function Navbar({ currentPage }) {
                   : "opacity-40 hover:opacity-100 transition-opacity"
               }`}
             >
-              <a href={item.path}>{item.title}</a>
+              <a
+                href={item.path}
+                target={`${item.title === "Resume" ? "__blank" : ""}`}
+              >
+                {item.title}
+              </a>
             </li>
           );
         })}

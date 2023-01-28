@@ -40,7 +40,7 @@ export const routes: Route[] = [
   },
   {
     title: "Resume",
-    path: "#resume",
+    path: "https://drive.google.com/file/d/1_Oa9cVdQXcW6ExBC5yXHtvWyhIfNMWEZ/view?usp=sharing",
   },
 ];
 

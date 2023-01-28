@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Link from "next/link";
-import {routes} from "@/data/global";
+import { routes } from "@/data/global";
 
 export default function MobileNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,7 +25,9 @@ export default function MobileNavbar() {
   return (
     <nav>
       <div
-        className={`w-full justify-between flex items-center ${true && 'bg-bg'} p-5`}
+        className={`w-full justify-between flex items-center ${
+          true && "bg-bg"
+        } p-5`}
         style={{ zIndex: 101 }}
       >
         <li className="list-none font-bold text-lg">
@@ -47,25 +49,28 @@ export default function MobileNavbar() {
           <CrossIcon data-hide={!isMenuOpen} />
         </button>
       </div>
-        <ul
-          className={`menu flex flex-col absolute bg-bg
+      <ul
+        className={`menu flex flex-col absolute bg-bg
             ${isMenuOpen && "menuRendered"}`}
-        >
-          {routes.map((item, index) => {
-            return (
-              <li
-                className="border-b border-gray-900 text-gray-100 text-sm font-semibold"
-                style={{ transitionDelay: `${150 + index * 25}ms` }}
-              >
-                <div onClick={toggleMenu}>
-                <a href={item.path}>
+      >
+        {routes.map((item, index) => {
+          return (
+            <li
+              className="border-b border-gray-900 text-gray-100 text-sm font-semibold"
+              style={{ transitionDelay: `${150 + index * 25}ms` }}
+            >
+              <div onClick={toggleMenu}>
+                <a
+                  href={item.path}
+                  target={`${item.title === "Resume" ? "__blank" : ""}`}
+                >
                   <a className="flex w-auto pb-4">{item.title}</a>
                 </a>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
     </nav>
   );
 }
