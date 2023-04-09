@@ -44,10 +44,7 @@ function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
         <meta property="og:url" content="https://dipeshjaiswal.com/" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={desc} />
-        <meta
-          property="og:image"
-          content="https://dipeshjaiswal.com/"
-        />
+        <meta property="og:image" content="https://dipeshjaiswal.com/" />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://dipeshjaiswal.com/" />
@@ -57,19 +54,12 @@ function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
           property="twitter:image"
           content="https://dipeshjaiswal.com/"
         ></meta>
+
+        {/* Google Tag */}
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KC3CN7V');`,
-          }}
-        ></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -82,10 +72,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           `,
           }}
         />
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WF29WXV');`,
+          }}
+        ></script>
+        {/* End Google Tag Manager */}
       </Head>
       <noscript
         dangerouslySetInnerHTML={{
-          __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KC3CN7V"
+          __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WF29WXV"
 height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
         }}
       ></noscript>
