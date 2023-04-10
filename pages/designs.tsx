@@ -5,15 +5,21 @@ import Projects from "components/designs/Designs";
 import React from "react";
 
 function designs() {
+  // Redirect to the home page
+  if (typeof window !== "undefined") {
+    window.location.href = "/";
+  }
+
   return (
-    <Page
-      currentPage="Designs"
-      meta={{ desc: "I'm an avid self-taught designer too! I publish all my web and creative designs on Dribbble also." }}
-    >
-      <Heading />
-      <Projects />
-      <More />
-    </Page>
+    // <Page
+    //   currentPage="Designs"
+    //   meta={{ desc: "I'm an avid self-taught designer too! I publish all my web and creative designs on Dribbble also." }}
+    // >
+    //   <Heading />
+    //   <Projects />
+    //   <More />
+    // </Page>
+    <></>
   );
 }
 

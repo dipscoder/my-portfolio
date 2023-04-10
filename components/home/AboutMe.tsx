@@ -4,17 +4,17 @@ import SectionTitle from "../global/SectionTitle";
 const ImageData = [
   {
     id: 0,
-    src: "/static/about/coding.png",
+    src: "/static/about/coding.webp",
     alt: "Coding",
   },
   {
     id: 1,
-    src: "/static/about/meditate.png",
+    src: "/static/about/meditate.webp",
     alt: "Meditate",
   },
   {
     id: 2,
-    src: "/static/about/exercise.png",
+    src: "/static/about/exercise.webp",
     alt: "Exercise",
   },
 ];
@@ -80,7 +80,7 @@ export const AboutMe = () => {
           <div className="absolute bottom-16 left-40 w-60 h-60 bg-fun-pink rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
           <div className=" ">
             <img
-              src="/static/about/coding.png"
+              src="/static/about/coding.webp"
               className="rounded-3xl md:w-1/2 m-auto  animate__animated animate__fadeIn"
               alt="My Picture"
             />
