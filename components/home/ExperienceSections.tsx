@@ -5,92 +5,122 @@ const ExperienceData = [
   {
     id: 0,
     company: "CultureX",
-    title: "Fullstack SDE",
+    title: "Software Developer",
     date: "October 2021 - Present",
     content: [
       {
-        title: "Frontend:",
-        description:
-          "Developed a Frontend structure which includes choosing appropriate technologies and frameworks, creating a scalable and maintainable codebase, and ensuring that the user interface was intuitive and user-friendly.",
+        title: "Frontend",
+        points: [
+          "UI/UX Overhaul: Collaborated with the design team to radically improve user experience across multiple products. Optimized React code to cut down on unnecessary re-renders, resulting in a 30% uplift in user engagement.",
+        ],
       },
       {
-        title: "Backend:",
-        description:
-          "Developed the Backend Architecture using Sequelize ORM and maintained an extensive database, configuring servers, reducing the maintenance cost by 15%.",
+        title: "Backend",
+        points: [
+          "API Optimization: Engineered high-performing APIs that reduced response times by 90% and optimized upload times for large datasets by 98%.",
+          // "Scalable Architecture: Transformed complex business requirements into a scalable architecture, fast-tracking the fulfillment of various business needs.",
+          "Key Projects: Developed pivotal tools such as the Campaign Proposal Tool (helping marketing agencies generate AI-driven proposals), Global Storage System (maintaining a global repository of creator datasets), and Global Search (enabling insights retrieval from a 100M+ creator database).",
+        ],
       },
       {
-        title: "Deployment:",
-        description:
-          "Reduced cost to the company by 50% by shifting client services from AWS EBS to S3 Buckets & Cloudfront.",
+        title: "Deployment & DevOps",
+        points: [
+          "DevOps Leadership: Directed and managed the entire DevOps process, from deployment to architecture setup. Successfully reduced the company's AWS costs by 50-60% through various practices and tools.",
+          "CI/CD Mastery: Orchestrated the entire Continuous Integration and Continuous Deployment (CI/CD) process using GitHub Actions and AWS, slashing deployment time by 50%.",
+        ],
       },
       {
-        title: "Leadership:",
-        description:
-          "Trained and supervised a team of 10 developers across 4 locations.",
+        title: "Leadership & Team Management",
+        points: [
+          "HR Sprint: Led an aggressive recruitment sprint that added 10 top-tier developers to the team in just 15 days.",
+          "Mentorship: Managed and mentored a diverse team of up to 8 developers, ensuring timely delivery of features and fixes with a 98% approval rate on pull requests. Reviewed over 100+ PRs.",
+        ],
       },
       {
-        title: "Technologies:",
-        description:
-          "React, ExpressJS, NodeJS, Firebase, MySQL, Sequelize, TypeScript, AWS, Tailwind CSS",
+        title: "Tech Stack",
+        points: [
+          "React, ExpressJS, NodeJS, MySQL, Sequelize, Mongodb, Mongoose, JavaScript, TypeScript, Firebase, AWS, Tailwind CSS.",
+        ],
       },
     ],
   },
   {
     id: 1,
     company: "Academix",
-    title: "Tech Lead",
+    title: "Fullstack Developer",
     date: "February 2021 - June 2021",
     content: [
       {
-        title: "Frontend:",
-        description:
+        title: "Frontend",
+        points: [
           "Developed a Frontend structure which includes choosing appropriate technologies and frameworks, creating a scalable and maintainable codebase, and ensuring that the user interface was intuitive and user-friendly.",
+        ],
       },
       {
-        title: "Backend:",
-        description:
+        title: "Backend",
+        points: [
           "Developed the Backend Architecture using Sequelize ORM and maintained an extensive database, configuring servers, reducing the maintenance cost by 15%.",
+        ],
       },
       {
-        title: "Deployment:",
-        description:
+        title: "Deployment",
+        points: [
           "Reduced cost to the company by 50% by shifting client services from AWS EBS to S3 Buckets & Cloudfront.",
+        ],
       },
       {
-        title: "Leadership:",
-        description:
+        title: "Leadership",
+        points: [
           "Trained and supervised a team of 10 developers across 4 locations.",
+        ],
+      },
+      {
+        title: "Tech Stack",
+        points: [
+          "React, ExpressJS, NodeJS, MySQL, Sequelize, JavaScript, Firebase, AWS.",
+        ],
       },
     ],
   },
   {
     id: 2,
     company: "CodeForCause",
-    title: "Fullstack SDE",
+    title: "Fullstack Intern",
     date: "June 2021 - September 2021",
     content: [
       {
-        title: "Frontend:",
-        description:
+        title: "Frontend",
+        points: [
           "Developed a Frontend structure which includes choosing appropriate technologies and frameworks, creating a scalable and maintainable codebase, and ensuring that the user interface was intuitive and user-friendly.",
+        ],
       },
       {
-        title: "Backend:",
-        description:
+        title: "Backend",
+        points: [
           "Developed the Backend Architecture using Sequelize ORM and maintained an extensive database, configuring servers, reducing the maintenance cost by 15%.",
+        ],
+      },
+      {
+        title: "Tech Stack",
+        points: ["React, JavaScript, HTML, CSS, Firebase, and Material-UI."],
       },
     ],
   },
   {
     id: 3,
     company: "Halfcute",
-    title: "Fullstack SDE",
+    title: "Frontend Intern",
     date: "June 2021 - September 2021",
     content: [
       {
-        title: "Frontend:",
-        description:
+        title: "Frontend",
+        points: [
           "Developed a Frontend structure which includes choosing appropriate technologies and frameworks, creating a scalable and maintainable codebase, and ensuring that the user interface was intuitive and user-friendly.",
+        ],
+      },
+      {
+        title: "Tech Stack",
+        points: ["VueJs, HTML, CSS, Javascript, Starpi & Bitbucket."],
       },
     ],
   },
@@ -100,7 +130,10 @@ const ExperienceSections = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <div id="experience" className="flex flex-col text-left justify-between pt-6 relative">
+    <div
+      id="experience"
+      className="flex flex-col text-left justify-between pt-6 relative"
+    >
       <div id="learnmore">
         <SectionTitle title="My Experience" />
       </div>
@@ -127,7 +160,6 @@ const ExperienceSections = () => {
         </div>
 
         {/* content */}
-
         {ExperienceData.map((item, index) => (
           <div
             key={index}
@@ -144,17 +176,21 @@ const ExperienceSections = () => {
             <p className="text-base text-fun-gray-light mt-2">{item.date}</p>
             <ul className="text-fun-gray list-inside">
               {item.content.map((content, index) => (
-                <li key={index} className="flex items-start text-base mt-4">
-                  <img
-                    src="/static/icons/right-arrow.svg"
-                    className="w-5 mt-1"
-                    alt="CultureX Logo"
-                  />
-                  <span>
-                    <span className="text-fun-pink">{content.title}</span>{" "}
-                    {content.description}
-                  </span>
-                </li>
+                <div key={index} className="text-base mt-4">
+                  <h2 className="text-fun-pink">{content.title}</h2>
+                  <ul>
+                    {content.points.map((point, index) => (
+                      <li key={index} className="flex items-start mt-2">
+                        <img
+                          src="/static/icons/right-arrow.svg"
+                          className="w-5 mt-1"
+                          alt="CultureX Logo"
+                        />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
             </ul>
           </div>
