@@ -26,7 +26,7 @@ export default function Home() {
         <AboutMe />
         <Skills />
         <ExperienceSections />
-        <Projects />
+        {/* <Projects /> */}
         {/* <Testimonials /> */}
         {/* <Posts allPosts={allPosts} /> */}
       </div>
