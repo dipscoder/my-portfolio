@@ -1,24 +1,24 @@
 type Route = {
-  title: string,
-  path: string
-}
+  title: string;
+  path: string;
+};
 
 type FooterCol = {
-  title: string,
+  title: string;
   links: {
-    name: string,
-    link: string,
-    icon?: string,
-    leavesWebsite: boolean
-  }[]
-}
+    name: string;
+    link: string;
+    icon?: string;
+    leavesWebsite: boolean;
+  }[];
+};
 
 type Footer = {
-  columns: FooterCol[]
+  columns: FooterCol[];
   support: {
-    buymeacoffee: string
-    message: string
-  }
+    buymeacoffee: string;
+    message: string;
+  };
 };
 
 export const routes: Route[] = [
@@ -40,10 +40,9 @@ export const routes: Route[] = [
   },
   {
     title: "Resume",
-    path: "https://drive.google.com/file/d/1_Oa9cVdQXcW6ExBC5yXHtvWyhIfNMWEZ/view?usp=sharing",
+    path: "https://drive.google.com/file/d/19BuUhrXkbJ2SLfRczh1x-JnXpIL7Uq1r/view",
   },
 ];
-
 
 export const footer: Footer = {
   columns: [
