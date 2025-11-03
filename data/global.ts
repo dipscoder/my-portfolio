@@ -34,10 +34,10 @@ export const routes: Route[] = [
     title: "Experience",
     path: "#experience",
   },
-  {
-    title: "Projects",
-    path: "#projects",
-  },
+  // {
+  //   title: "Projects",
+  //   path: "#projects",
+  // },
   {
     title: "Resume",
     path: "https://drive.google.com/file/d/19BuUhrXkbJ2SLfRczh1x-JnXpIL7Uq1r/view",
@@ -59,11 +59,11 @@ export const footer: Footer = {
         //   link: "/blog",
         //   leavesWebsite: false,
         // },
-        {
-          name: "Projects",
-          link: "/projects",
-          leavesWebsite: false,
-        },
+        // {
+        //   name: "Projects",
+        //   link: "/projects",
+        //   leavesWebsite: false,
+        // },
         // {
         //   name: "Designs",
         //   link: "/designs",

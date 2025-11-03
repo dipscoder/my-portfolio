@@ -10,6 +10,8 @@ import Projects from "components/projects/Projects";
 import Heading from "components/projects/Heading";
 import More from "components/projects/More";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import React from "react";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const allTags = [];
@@ -44,26 +46,37 @@ export const getStaticProps: GetStaticProps = async ({params}: {params: {tag: st
 };
 
 function PostPage({ filteredProjects, tag }) {
-  const capsTag = allTags[allKebabTags.indexOf(tag)];
-  return (
-    <Page
-      currentPage="Projects"
-      meta={{
-        title: `${capsTag} Projects`,
-        desc: `A showcase for all of my ${capsTag} projects.`,
-      }}
-    >
-      <Heading tag={capsTag} />
-      <Projects overwriteProjects={filteredProjects} />
+  const router = useRouter();
 
-      <Link href="/projects">
-        <div className="mt-8 max-w-sm md:max-w-2xl border border-fun-pink mx-auto text-center w-full whitespace-nowrap px-8 py-3 rounded-full text-fun-pink bg-fun-pink-darkerer hover:bg-fun-pink hover:text-white transition-colors cursor-pointer">
-          View All
-        </div>
-      </Link>
-      {/* <More /> */}
-    </Page>
-  );
+  React.useEffect(() => {
+    // Redirect to home page since projects section is currently disabled
+    router.replace("/");
+  }, [router]);
+
+  // Return null or a loading state while redirecting
+  return null;
+
+  // Original component code kept for future re-enabling
+  // const capsTag = allTags[allKebabTags.indexOf(tag)];
+  // return (
+  //   <Page
+  //     currentPage="Projects"
+  //     meta={{
+  //       title: `${capsTag} Projects`,
+  //       desc: `A showcase for all of my ${capsTag} projects.`,
+  //     }}
+  //   >
+  //     <Heading tag={capsTag} />
+  //     <Projects overwriteProjects={filteredProjects} />
+
+  //     <Link href="/projects">
+  //       <div className="mt-8 max-w-sm md:max-w-2xl border border-fun-pink mx-auto text-center w-full whitespace-nowrap px-8 py-3 rounded-full text-fun-pink bg-fun-pink-darkerer hover:bg-fun-pink hover:text-white transition-colors cursor-pointer">
+  //         View All
+  //       </div>
+  //     </Link>
+  //     {/* <More /> */}
+  //   </Page>
+  // );
 }
 
 export default PostPage;
