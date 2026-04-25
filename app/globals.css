@@ -33,6 +33,23 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Theme crossfade. The `theme-transitioning` class is added by the toggle
+   for ~320ms while the dark class flips, so colours ease across instead of
+   snapping. It is NOT applied on first paint, so initial load has no flash
+   and no animation. */
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition:
+    background-color 320ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    color 320ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    border-color 320ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    outline-color 320ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    fill 320ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    stroke 320ms cubic-bezier(0.22, 0.61, 0.36, 1) !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .px-reveal,
@@ -45,6 +62,10 @@ html {
   .px-backdrop,
   .px-menu-bars span,
   .px-menu-row { transition: none !important; }
+  html.theme-transitioning,
+  html.theme-transitioning *,
+  html.theme-transitioning *::before,
+  html.theme-transitioning *::after { transition: none !important; }
 }
 
 /* ─── Motion primitives ──────────────────────────────────────────────────────
