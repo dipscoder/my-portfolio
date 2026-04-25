@@ -6,8 +6,8 @@ import Navbar from "../global/Navbar";
 function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
   const pageTitle = `${
     currentPage === "Home"
-      ? "Dipesh Jaiswal - A Mindful Developer."
-      : `${currentPage} - dipeshjaiwal.com`
+      ? "Dipesh Jaiswal - Senior Software Engineer & Engineering Lead"
+      : `${currentPage} - dipeshjaiswal.com`
   }`;
   return (
     <div
@@ -42,7 +42,7 @@ function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
         <meta property="og:url" content="https://dipeshjaiswal.com/" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={desc} />
-        <meta property="og:image" content="https://dipeshjaiswal.com/" />
+        <meta property="og:image" content="https://dipeshjaiswal.com/static/misc/og.png" />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://dipeshjaiswal.com/" />
@@ -50,7 +50,7 @@ function Page({ currentPage, meta: { title, desc }, children }: PageProps) {
         <meta property="twitter:description" content={desc} />
         <meta
           property="twitter:image"
-          content="https://dipeshjaiswal.com/"
+          content="https://dipeshjaiswal.com/static/misc/og.png"
         ></meta>
 
         {/* Google Tag */}

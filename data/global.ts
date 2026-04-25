@@ -26,18 +26,26 @@ export const routes: Route[] = [
     title: "About",
     path: "#about",
   },
-  // {
-  //   title: "Blog",
-  //   path: "/blog",
-  // },
+  {
+    title: "Skills",
+    path: "#skills",
+  },
+  {
+    title: "Highlights",
+    path: "#highlights",
+  },
   {
     title: "Experience",
     path: "#experience",
   },
-  // {
-  //   title: "Projects",
-  //   path: "#projects",
-  // },
+  {
+    title: "Projects",
+    path: "#projects",
+  },
+  {
+    title: "Blog",
+    path: "#blog",
+  },
   {
     title: "Resume",
     path: "https://drive.google.com/file/d/19BuUhrXkbJ2SLfRczh1x-JnXpIL7Uq1r/view",

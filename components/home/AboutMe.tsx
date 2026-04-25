@@ -1,118 +1,50 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import SectionTitle from "../global/SectionTitle";
 
-const ImageData = [
-  {
-    id: 0,
-    src: "/static/about/coding.webp",
-    alt: "Coding",
-  },
-  {
-    id: 1,
-    src: "/static/about/meditate.webp",
-    alt: "Meditate",
-  },
-  {
-    id: 2,
-    src: "/static/about/exercise.webp",
-    alt: "Exercise",
-  },
-];
-
-const imageStyle = {
-  animation: "zoomInOut 4s 2s ease-in-out infinite",
-};
-
 export const AboutMe = () => {
-  const [counter, setCounter] = useState(0);
-
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((currentImageIndex + 1) % ImageData.length);
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, [currentImageIndex, ImageData.length]);
-
   return (
     <div id="about" className="flex flex-col text-left justify-between pt-9 relative">
       <div id="learnmore">
         <SectionTitle title="About Me" />
       </div>
-      <div className="flex flex-col justify-center md:flex-row">
-        <div className="w-100 md:w-1/2 text-fun-gray">
-          <p>
-            As a <span className="text-fun-pink">Developer 👨‍💻</span> with over{" "}
-            <span className="text-fun-pink">2 years of experience</span>, I have
-            had the opportunity to work on a wide range of projects and hone my
-            skills in both <span className="text-fun-pink">Frontend</span> and{" "}
-            <span className="text-fun-pink">Backend</span> development. In my
-            current role, I have also had the opportunity to{" "}
-            <span className="text-fun-pink">Lead</span> and{" "}
-            <span className="text-fun-pink">Mentor </span> a team of developers,
-            which has allowed me to deepen my understanding of project
-            management and team dynamics. I am a strong believer in the power of
-            collaboration and open communication, and I strive to create a
-            positive and inclusive work environment for my team.
+      <div className="flex flex-col justify-center md:flex-row gap-10">
+        <div className="w-100 md:w-3/5 text-fun-gray space-y-4">
+          <p className="text-lg leading-relaxed">
+            I'm a <span className="text-fun-pink">Senior Software Engineer & Engineering Lead</span> at
+            CultureX — an influencer marketing SaaS platform serving{" "}
+            <span className="text-white font-medium">150+ enterprise clients</span> including
+            Mahindra, Nestle, and Decathlon. I've been here since nearly the beginning,
+            progressing from backend intern to senior engineer and team lead over 4+ years.
           </p>
-          {/* <p className="pt-4">
-            In my free time, ☕ you can find me tinkering with new programming
-            languages, collaborating with other developers on open-source
-            projects, or simply exploring the vast{" "}
-            <span className="text-fun-pink">world of the web</span>. I am
-            constantly learning and looking for new opportunities to grow as a
-            developer and make an impact.
-          </p> */}
-          <p className="pt-4">
-            Additionally, 🚴‍♀️ Cycling is one of my favorite hobbies, and I love
-            hitting the trails on my bike or joining group rides on the
-            weekends. If you are a fellow developer or cyclist, I would love to{" "}
-            <span className="text-fun-pink">Connect</span> and{" "}
-            <span className="text-fun-pink">Collaborate</span> on new projects
-            or hit the road together.
+          <p className="text-lg leading-relaxed pt-2">
+            Most of my work sits at the intersection of{" "}
+            <span className="text-fun-pink">distributed systems</span>,{" "}
+            <span className="text-fun-pink">performance optimization</span>, and{" "}
+            <span className="text-fun-pink">cloud architecture on AWS</span>.
+            I led the transformation from 20 separate single-tenant deployments into a
+            unified multi-tenant SaaS platform, re-architected a MongoDB schema across
+            8M+ documents with zero downtime, and brought AWS infrastructure costs down significantly.
+            These days I lead a team of 8–9 engineers, run code reviews, and keep shipping.
+          </p>
+          <p className="text-lg leading-relaxed pt-2">
+            Outside of work, I'm usually on my bike 🚴‍♀️ — cycling is how I reset.
+            I care about building things that work well for real users, writing code that
+            other engineers can maintain, and solving problems that are genuinely hard.
+            Long-term, I'm aiming for the Staff/Principal Engineer track at strong engineering
+            cultures.
           </p>
         </div>
-        <div className="pt-10 md:w-1/2 relative z-10">
+        <div className="pt-10 md:w-2/5 relative z-10 flex items-center justify-center">
           <div className="absolute top-10 left-32 w-60 h-60 bg-fun-pink rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
           <div className="absolute top-10 right-28 w-60 h-60 bg-fun-pink rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
           <div className="absolute bottom-16 left-40 w-60 h-60 bg-fun-pink rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
-          <div className=" ">
+          <div className="w-full relative flex justify-center">
             <img
               src="/static/about/coding.webp"
-              className="rounded-3xl md:w-1/2 m-auto  animate__animated animate__fadeIn"
+              className="rounded-3xl w-3/4 m-auto animate-fadeIn relative z-10"
               alt="My Picture"
             />
           </div>
-          {/* {ImageData.map((image) => (
-            <img
-              key={image.id}
-              src={image.src}
-              className={`rounded-3xl w-1/2 m-auto  animate__animated ${counter === image.id ? 'animate__fadeIn' : 'animate__fadeOut'}}`}
-              alt={image.alt}
-            />
-          ))} */}
-
-          {/* <img src={ImageData[currentImageIndex].src} style={imageStyle} className={`rounded-3xl w-1/2 m-auto`} /> */}
-
-          {/* <img
-            src="/static/about/coding.png"
-            className="rounded-3xl w-1/2 m-auto  animate__animated animate__fadeIn"
-            alt="My Picture"
-          />
-          <img
-            src="/static/about/meditate.png"
-            className="rounded-3xl w-1/2 m-auto "
-            alt="My Picture"
-          />
-          <img
-            src="/static/about/exercise.png"
-            className="rounded-3xl w-1/2 m-auto"
-            alt="My Picture"
-          /> */}
-
-          {/* <p className="text-fun-pink text-center mt-4 text-xl">Code</p> */}
         </div>
       </div>
     </div>

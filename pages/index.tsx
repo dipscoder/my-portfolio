@@ -4,19 +4,10 @@ import Page from "@/components/utility/Page";
 // import Posts from "@/components/home/Posts";
 import Projects from "@/components/home/Projects";
 import Skills from "@/components/home/Skills";
-import Testimonials from "@/components/home/Testimonials";
+import Highlights from "@/components/home/Highlights";
 import { AboutMe } from "@/components/home/AboutMe";
 import ExperienceSections from "@/components/home/ExperienceSections";
-// import { allPosts } from "contentlayer/generated";
-// import { GetStaticProps } from "next";
-
-// export const getStaticProps: GetStaticProps = async () => {
-//   return {
-//     props: {
-//       allPosts: allPosts.sort(({date: dateA}: any, {date: dateB}: any) => dateB - dateA),
-//     },
-//   };
-// }
+import Blog from "@/components/home/Blog";
 
 export default function Home() {
   return (
@@ -25,10 +16,10 @@ export default function Home() {
       <div className="mt-20 space-y-32">
         <AboutMe />
         <Skills />
+        <Highlights />
         <ExperienceSections />
-        {/* <Projects /> */}
-        {/* <Testimonials /> */}
-        {/* <Posts allPosts={allPosts} /> */}
+        <Projects />
+        <Blog />
       </div>
       <CTA />
     </Page>

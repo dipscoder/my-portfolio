@@ -11,8 +11,8 @@ function Hero() {
       >
         <p className="text-xl mb-5">Hey, I'm Dipesh Jaiswal.</p>
         <h1 className="heroTitle inline-block max-w-2xl lg:max-w-4xl  w-auto relative text-5xl md:text-6xl lg:text-7xl tracking-tighter mb-10 font-bold heroShinyBg">
-          I love building the <span className="heroShiny1 gradient-text">web</span>, one {" "}
-          <span className="heroShiny2 gradient-text">pixel</span> at a time.
+          I build <span className="heroShiny1 gradient-text">systems</span> that {" "}
+          <span className="heroShiny2 gradient-text">scale</span>.
           <img
             className="sqD squiggle-hero-html w-16 top-[-90px] right-[5%] sm:top-[-90px] sm:right-[170px]"
             style={{ animationDelay: "0.1s" }}
@@ -58,6 +58,9 @@ function Hero() {
             src="/static/doodles/hero/code.svg"
           />
         </h1>
+        <p className="max-w-2xl text-fun-gray text-lg leading-relaxed mb-10">
+          Senior Software Engineer & Engineering Lead. 4+ years building enterprise SaaS, leading multi-tenant architectures, and diving deep into distributed systems & AWS.
+        </p>
         <ScrollLink
           activeClass="active"
           to="learnmore"

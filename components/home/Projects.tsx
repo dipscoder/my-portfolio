@@ -11,8 +11,8 @@ function Projects() {
       <div id="learnmore">
         <SectionTitle title="Here are a few of my favorite projects." />
       </div>
-      <div className="grid grid-cols-1 gap-12 md:gap-5 md:grid-cols-3 items-start">
-        {projects.slice(0, 3).map((item) => {
+      <div className={`${projects.length === 1 ? 'flex justify-center' : 'grid grid-cols-1 gap-12 md:gap-5 md:grid-cols-3'} items-start`}>
+        {projects.map((item) => {
           return (
             <ProjectCard key={item.id} project={item} />
           );
