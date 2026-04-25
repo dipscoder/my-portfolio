@@ -13,7 +13,7 @@ introduced.
 
 Here’s the parts of the playbook that actually mattered.
 
-## Rehearse against a snapshot — twice
+## Rehearse against a snapshot, twice
 
 The first dry run is for the script. The second is to time it. The
 real cutover should feel boring because the only variable left is
@@ -38,6 +38,6 @@ is doing a lot of work in migration code.
 
 ---
 
-If I were doing it again, I’d add the shadow-write phase too — write
+If I were doing it again, I’d add the shadow-write phase too: write
 to both, read from old, until you’re sure the new one stays in sync
 under load. We didn’t have time. It would have caught the array bug.

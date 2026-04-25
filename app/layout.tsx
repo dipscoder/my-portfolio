@@ -26,7 +26,7 @@ const mono = JetBrains_Mono({
 });
 
 const SITE = 'https://dipeshjaiswal.com';
-const TITLE = 'Dipesh Jaiswal — Senior Engineer at CultureX';
+const TITLE = 'Dipesh Jaiswal · Senior Engineer at CultureX';
 const DESC =
   'The guy who makes sure the software people use works pretty much all the time. No lag, no drama. Backend, infra, and the bits in between.';
 
@@ -100,7 +100,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
       </head>
-      <body>
+      {/* suppressHydrationWarning on <body>: Grammarly-style extensions inject
+          attributes on <body> before React hydrates, which produces a noisy
+          (and unactionable) mismatch warning. */}
+      <body suppressHydrationWarning>
         {children}
         <Analytics />
       </body>

@@ -5,9 +5,9 @@ import { Nav } from '../_components/Nav';
 import { getAllPosts, type PostMeta } from '@/lib/posts';
 
 export const metadata: Metadata = {
-  title: 'Writing — Dipesh Jaiswal',
+  title: 'Writing · Dipesh Jaiswal',
   description:
-    'Notes from along the way — mostly on the boring useful corners of building products.',
+    'Notes from along the way. Mostly on the boring useful corners of building products.',
 };
 
 function groupByYear(posts: PostMeta[]): Record<string, PostMeta[]> {
@@ -40,7 +40,7 @@ export default async function WritingArchive() {
 
           {posts.length === 0 ? (
             <p className="font-mono text-xs text-inkmute">
-              The archive is empty for now — I’m drafting.
+              The archive is empty for now. I’m drafting.
             </p>
           ) : (
             years.map((year) => (

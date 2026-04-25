@@ -14,7 +14,7 @@ export function Contact() {
   return (
     <Section id="contact" bridge="contact" className="md:pb-[110px] md:pt-[90px]">
       <h2 className="m-0 mb-4 max-w-[720px] font-serif text-[26px] font-normal leading-[1.2] tracking-[-0.005em] text-ink md:mb-6 md:text-[42px] md:leading-[1.15] md:tracking-[-0.01em]">
-        If you’re building something user-driven and the boring infrastructure parts are slowing you down — say hi.
+        If you’re building something user-driven and the boring infrastructure parts are slowing you down, say hi.
       </h2>
       <p className="m-0 mb-7 font-serif text-[15.5px] italic text-inksoft md:mb-9 md:text-[18px]">
         Email is the easiest. I read everything.

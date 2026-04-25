@@ -23,7 +23,7 @@ export async function Writing() {
 
       {posts.length === 0 ? (
         <p className="font-mono text-xs text-inkmute">
-          No posts yet — check back soon.
+          No posts yet. Check back soon.
         </p>
       ) : (
         <ul className="m-0 grid max-w-[820px] list-none p-0">

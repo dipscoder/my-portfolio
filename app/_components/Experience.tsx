@@ -33,7 +33,7 @@ export function Experience() {
                       key={b}
                       className="grid grid-cols-[14px_1fr] gap-2.5 text-[14px] leading-[1.55] text-inksoft md:text-[15.5px] md:leading-[1.6]"
                     >
-                      <span className="pt-[2px] text-accent">—</span>
+                      <span aria-hidden="true" className="pt-[2px] text-accent">›</span>
                       <span>{b}</span>
                     </li>
                   ))}

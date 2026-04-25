@@ -2,11 +2,11 @@
 title: Running SQL in production without losing sleep
 slug: sql-in-production
 tag: engineering
-summary: A walkthrough of the SQL-on-production-data system we built — change review, dry-runs, rollback, and the small habits that kept it boring.
+summary: A walkthrough of the SQL-on-production-data system we built. Change review, dry-runs, rollback, and the small habits that kept it boring.
 date: '2026-04-12'
 ---
 
-Production SQL has a reputation. The story is always the same — someone
+Production SQL has a reputation. The story is always the same. Someone
 runs an `UPDATE` without a `WHERE`, the company loses a Tuesday, a
 post-mortem gets written, and three months later someone does it again.
 
@@ -28,7 +28,7 @@ ROLLBACK;
 
 ## Two-person review for anything that mutates
 
-Pull-request style — except the diff is the SQL itself, plus the
+Pull-request style, except the diff is the SQL itself, plus the
 dry-run output pasted in. Reviewer asks the boring questions: what
 indexes does this hit, is the table locked, what happens if it runs
 twice. Most bugs die in this conversation.
