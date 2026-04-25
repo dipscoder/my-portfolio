@@ -59,7 +59,7 @@ export default async function PostPage({
         <article className="mx-auto max-w-[680px]">
           <Link
             href="/writing"
-            className="mb-8 inline-block font-mono text-[11px] uppercase tracking-[0.08em] text-inkmute transition-colors hover:text-accent md:mb-12"
+            className="px-link mb-8 inline-block font-mono text-[11px] uppercase tracking-[0.08em] text-inkmute md:mb-12"
           >
             ← writing
           </Link>
@@ -80,7 +80,7 @@ export default async function PostPage({
             Thanks for reading. Reply to this on{' '}
             <a
               href="mailto:dipeshjaiswal140@gmail.com"
-              className="text-ink underline decoration-accent decoration-1 underline-offset-[3px] transition-colors hover:text-accent"
+              className="px-link text-ink underline decoration-accent decoration-1 underline-offset-[3px]"
             >
               email
             </a>

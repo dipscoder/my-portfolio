@@ -1,4 +1,5 @@
 import { HIGHLIGHTS } from '@/lib/content';
+import { Reveal } from './Reveal';
 import { Section, SectionHeading } from './Section';
 
 export function SelectedWork() {
@@ -10,8 +11,10 @@ export function SelectedWork() {
         {HIGHLIGHTS.map((h, i) => {
           const last = i === HIGHLIGHTS.length - 1;
           return (
-            <article
+            <Reveal
+              as="article"
               key={h.title}
+              delay={i * 100}
               className={`grid gap-4 pb-6 md:grid-cols-[40px_1fr] md:gap-6 md:pb-8 ${
                 last ? '' : 'border-b border-rule'
               }`}
@@ -30,7 +33,7 @@ export function SelectedWork() {
                   {h.foot}
                 </p>
               </div>
-            </article>
+            </Reveal>
           );
         })}
       </div>

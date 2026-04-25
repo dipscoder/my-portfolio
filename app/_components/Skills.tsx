@@ -7,7 +7,7 @@ export function Skills() {
     <Section id="skills" bridge="skills" label="Stack & taste">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-6 top-14 hidden opacity-50 md:block"
+        className="px-doodle pointer-events-none absolute right-6 top-14 hidden opacity-50 md:block"
       >
         <Coffee className="h-[56px] w-auto" />
       </div>

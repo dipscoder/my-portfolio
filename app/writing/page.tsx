@@ -58,7 +58,7 @@ export default async function WritingArchive() {
                     >
                       <Link
                         href={`/writing/${p.slug}`}
-                        className="group grid items-baseline gap-3 py-5 text-ink no-underline md:grid-cols-[110px_1fr] md:gap-6 md:py-6"
+                        className="px-row group grid items-baseline gap-3 py-5 text-ink no-underline md:grid-cols-[110px_1fr] md:gap-6 md:py-6"
                       >
                         <span className="pt-1 font-mono text-[10.5px] uppercase tracking-[0.08em] text-inkmute md:text-[11px]">
                           {p.tag}

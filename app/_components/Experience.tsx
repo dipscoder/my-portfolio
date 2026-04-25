@@ -1,4 +1,5 @@
 import { EXPERIENCE, LINKS } from '@/lib/content';
+import { Reveal } from './Reveal';
 import { Section, SectionHeading } from './Section';
 
 export function Experience() {
@@ -10,8 +11,10 @@ export function Experience() {
         {EXPERIENCE.map((exp, i) => {
           const last = i === EXPERIENCE.length - 1;
           return (
-            <article
+            <Reveal
+              as="article"
               key={exp.company}
+              delay={i * 80}
               className={`grid gap-3 pb-6 md:grid-cols-[180px_1fr] md:gap-8 md:pb-9 ${
                 last ? '' : 'border-b border-rule'
               }`}
@@ -21,8 +24,7 @@ export function Experience() {
               </div>
               <div>
                 <div className="mb-1 font-serif text-lg font-medium text-ink md:text-[22px]">
-                  {exp.role}{' '}
-                  <span className="text-accent">· {exp.company}</span>
+                  {exp.role} <span className="text-accent">· {exp.company}</span>
                 </div>
                 <div className="mb-4 font-serif text-[13.5px] italic text-inksoft md:text-[15px]">
                   {exp.sub}
@@ -39,7 +41,7 @@ export function Experience() {
                   ))}
                 </ul>
               </div>
-            </article>
+            </Reveal>
           );
         })}
       </div>
@@ -48,7 +50,7 @@ export function Experience() {
         The complete version, with dates and dependencies, is in the{' '}
         <a
           href={LINKS.resume}
-          className="text-ink underline decoration-accent decoration-1 underline-offset-[3px] transition-colors hover:text-accent"
+          className="px-link text-ink underline decoration-accent decoration-1 underline-offset-[3px]"
         >
           résumé (pdf)
         </a>

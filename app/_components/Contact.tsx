@@ -29,7 +29,7 @@ export function Contact() {
               href={row.href}
               target={external ? '_blank' : undefined}
               rel={external ? 'noopener noreferrer' : undefined}
-              className="grid grid-cols-[80px_1fr] items-baseline gap-3 border-t border-rule py-3.5 text-ink no-underline transition-colors hover:text-accent md:grid-cols-[90px_1fr] md:gap-4 md:py-4"
+              className="px-link grid grid-cols-[80px_1fr] items-baseline gap-3 border-t border-rule py-3.5 text-ink no-underline md:grid-cols-[90px_1fr] md:gap-4 md:py-4"
             >
               <span className="text-[10.5px] uppercase tracking-[0.08em] text-inkmute md:text-[11px]">
                 {row.k}
