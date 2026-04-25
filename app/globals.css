@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme tokens — light is the default; .dark overrides on <html>. */
+:root {
+  --bg: #f5f1ea;
+  --bg-soft: #ebe5da;
+  --ink: #1a1714;
+  --ink-soft: rgba(26, 23, 20, 0.65);
+  --ink-mute: rgba(26, 23, 20, 0.42);
+  --rule: rgba(26, 23, 20, 0.10);
+  --accent: #b8401f;
+  --card-bg: #faf7f1;
+  --card-border: rgba(26, 23, 20, 0.10);
+  color-scheme: light;
+}
+
+html.dark {
+  --bg: #0e0d0c;
+  --bg-soft: #161412;
+  --ink: #f5efe6;
+  --ink-soft: rgba(245, 239, 230, 0.62);
+  --ink-mute: rgba(245, 239, 230, 0.42);
+  --rule: rgba(245, 239, 230, 0.10);
+  --accent: #e8895f;
+  --card-bg: rgba(255, 255, 255, 0.025);
+  --card-border: rgba(245, 239, 230, 0.08);
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans), -apple-system, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Default headings: pretty wrapping for prose, balanced for hero. */
+h1 { text-wrap: balance; }
+p, li { text-wrap: pretty; }
+
+/* MDX prose: serif body in a tight column. Tailwind typography is too loud
+   for this design; we override the basics ourselves. */
+.prose-writing {
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.7;
+}
+.prose-writing p { margin: 0 0 1.2em; }
+.prose-writing h2 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: -0.005em;
+  margin: 2em 0 0.6em;
+}
+.prose-writing h3 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 21px;
+  margin: 1.6em 0 0.4em;
+}
+.prose-writing a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--accent);
+  text-decoration: none;
+}
+.prose-writing a:hover { color: var(--accent); }
+.prose-writing blockquote {
+  border-left: 2px solid var(--accent);
+  margin: 1.5em 0;
+  padding-left: 1.2em;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.prose-writing code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+.prose-writing pre {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  line-height: 1.55;
+  background: var(--bg-soft);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 16px 18px;
+  margin: 1.4em 0;
+  overflow-x: auto;
+}
+.prose-writing pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+}
+.prose-writing ul, .prose-writing ol {
+  padding-left: 1.4em;
+  margin: 0 0 1.2em;
+}
+.prose-writing li { margin: 0.3em 0; }
+.prose-writing hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 2.5em 0;
+}
+
+/* rehype-pretty-code line numbers + highlights. */
+[data-rehype-pretty-code-figure] pre { padding-inline: 0; }
+[data-rehype-pretty-code-figure] code {
+  display: grid;
+  counter-reset: line;
+}
+[data-rehype-pretty-code-figure] [data-line] {
+  padding: 0 1rem;
+}

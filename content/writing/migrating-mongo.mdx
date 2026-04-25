@@ -1,0 +1,43 @@
+---
+title: What I learned migrating 8M Mongo docs in one sitting
+slug: migrating-mongo
+tag: engineering
+summary: The eight-hour cutover, the parts I rehearsed twelve times, and the parts I still got wrong.
+date: '2026-03-04'
+---
+
+The cutover started at 11pm on a Saturday and ended at 7am Sunday.
+Eight hours, 8M+ documents, zero scheduled downtime. By Monday morning
+queries were 70% faster. By Monday afternoon I noticed the bug I’d
+introduced.
+
+Here’s the parts of the playbook that actually mattered.
+
+## Rehearse against a snapshot — twice
+
+The first dry run is for the script. The second is to time it. The
+real cutover should feel boring because the only variable left is
+"will the actual production load slow it down by some factor I didn’t
+account for." (For me: 1.4×. Plan for 2×.)
+
+## The shadow read
+
+For the last week before the cutover, every read against the old
+collection also issued the same query against the new one. Diff the
+results, log the misses. By the time we flipped the switch, the
+diff log had been quiet for four days.
+
+## What I got wrong
+
+A subtle thing about array fields: documents with `tags: []` (empty
+array) and documents with no `tags` field at all are different in the
+old schema, but the migration treated them as equivalent. About 200
+documents ended up with `tags: null` instead of `tags: []`. Took me
+until Monday to spot it. Two-line fix, but a reminder that "equivalent"
+is doing a lot of work in migration code.
+
+---
+
+If I were doing it again, I’d add the shadow-write phase too — write
+to both, read from old, until you’re sure the new one stays in sync
+under load. We didn’t have time. It would have caught the array bug.

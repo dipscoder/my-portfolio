@@ -1,0 +1,45 @@
+---
+title: Running SQL in production without losing sleep
+slug: sql-in-production
+tag: engineering
+summary: A walkthrough of the SQL-on-production-data system we built — change review, dry-runs, rollback, and the small habits that kept it boring.
+date: '2026-04-12'
+---
+
+Production SQL has a reputation. The story is always the same — someone
+runs an `UPDATE` without a `WHERE`, the company loses a Tuesday, a
+post-mortem gets written, and three months later someone does it again.
+
+The system we built isn’t clever. It’s just a handful of small habits we
+made hard to skip:
+
+## Dry-run before commit
+
+Every query goes through a wrapper that runs it inside a transaction,
+prints the affected row count, and rolls back. You read the number,
+decide whether it’s plausible, and only then take the safety off.
+
+```sql
+BEGIN;
+  UPDATE users SET status = 'archived' WHERE last_seen < NOW() - INTERVAL '2 years';
+  -- look at the row count
+ROLLBACK;
+```
+
+## Two-person review for anything that mutates
+
+Pull-request style — except the diff is the SQL itself, plus the
+dry-run output pasted in. Reviewer asks the boring questions: what
+indexes does this hit, is the table locked, what happens if it runs
+twice. Most bugs die in this conversation.
+
+## A rollback plan, written down
+
+Not "we have backups." A specific plan for *this* change. Often it’s
+the inverse `UPDATE`. Sometimes it’s "restore the snapshot from 3am."
+Either way, it goes in the ticket before the original query runs.
+
+---
+
+None of this is exciting. That’s the point. The fun of production SQL
+is making sure nothing fun happens.
