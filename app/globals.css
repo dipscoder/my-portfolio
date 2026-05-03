@@ -1,0 +1,295 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme tokens. Light is the default; .dark overrides on <html>. */
+:root {
+  --bg: #f5f1ea;
+  --bg-soft: #ebe5da;
+  --ink: #1a1714;
+  --ink-soft: rgba(26, 23, 20, 0.65);
+  --ink-mute: rgba(26, 23, 20, 0.42);
+  --rule: rgba(26, 23, 20, 0.10);
+  --accent: #b8401f;
+  --card-bg: #faf7f1;
+  --card-border: rgba(26, 23, 20, 0.10);
+  color-scheme: light;
+}
+
+html.dark {
+  --bg: #0e0d0c;
+  --bg-soft: #161412;
+  --ink: #f5efe6;
+  --ink-soft: rgba(245, 239, 230, 0.62);
+  --ink-mute: rgba(245, 239, 230, 0.42);
+  --rule: rgba(245, 239, 230, 0.10);
+  --accent: #e8895f;
+  --card-bg: rgba(255, 255, 255, 0.025);
+  --card-border: rgba(245, 239, 230, 0.08);
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Theme crossfade. The `theme-transitioning` class is added by the toggle
+   for ~320ms while the dark class flips, so colours ease across instead of
+   snapping. It is NOT applied on first paint, so initial load has no flash
+   and no animation. */
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition:
+    background-color 320ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    color 320ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    border-color 320ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    outline-color 320ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    fill 320ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    stroke 320ms cubic-bezier(0.22, 0.61, 0.36, 1) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .px-reveal,
+  .px-reveal--in { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .px-link,
+  .px-card,
+  .px-row,
+  .px-doodle,
+  .px-mobile-sheet,
+  .px-backdrop,
+  .px-menu-bars span,
+  .px-menu-row { transition: none !important; }
+  html.theme-transitioning,
+  html.theme-transitioning *,
+  html.theme-transitioning *::before,
+  html.theme-transitioning *::after { transition: none !important; }
+}
+
+/* ─── Motion primitives ──────────────────────────────────────────────────────
+   Class names are part of the design contract. Keep them stable:
+   px-reveal, px-link, px-row, px-card, px-doodle, px-mobile-sheet,
+   px-backdrop, px-menu-bars, px-menu-row.                                  */
+
+.px-reveal {
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+.px-reveal--in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.px-link {
+  transition:
+    color 240ms ease,
+    opacity 240ms ease,
+    transform 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.px-link:hover { opacity: 0.78; }
+
+.px-row {
+  transition:
+    background 320ms ease,
+    padding 320ms ease,
+    transform 320ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.px-row:hover { transform: translateX(4px); }
+
+.px-card {
+  transition:
+    transform 360ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 360ms ease,
+    border-color 360ms ease;
+}
+.px-card:hover { transform: translateY(-2px); }
+
+.px-doodle {
+  display: inline-block;
+  transition: transform 600ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.px-doodle:hover { transform: rotate(-3deg) translateY(-2px); }
+
+/* Mobile sheet + backdrop */
+.px-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms ease;
+  z-index: 40;
+}
+.px-backdrop--open { opacity: 1; pointer-events: auto; }
+
+.px-mobile-sheet {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: 86%;
+  max-width: 360px;
+  transform: translateX(100%);
+  transition: transform 360ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  z-index: 41;
+  will-change: transform;
+  display: flex;
+  flex-direction: column;
+}
+.px-mobile-sheet--open { transform: translateX(0); }
+
+/* Hamburger button + bars that morph into an X */
+.px-menu-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.px-menu-bars {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.px-menu-bars span {
+  display: block;
+  width: 18px;
+  height: 1.4px;
+  background: currentColor;
+  transition:
+    transform 280ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 200ms ease;
+}
+.px-menu-bars--open span:nth-child(1) { transform: translateY(5.4px) rotate(45deg); }
+.px-menu-bars--open span:nth-child(2) { opacity: 0; }
+.px-menu-bars--open span:nth-child(3) { transform: translateY(-5.4px) rotate(-45deg); }
+
+.px-menu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 18px 0;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    padding-left 320ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    color 240ms ease;
+}
+.px-menu-row:hover { padding-left: 6px; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans), -apple-system, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Default headings: pretty wrapping for prose, balanced for hero. */
+h1 { text-wrap: balance; }
+p, li { text-wrap: pretty; }
+
+/* MDX prose: serif body in a tight column. Tailwind typography is too loud
+   for this design; we override the basics ourselves. */
+.prose-writing {
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.7;
+}
+.prose-writing p { margin: 0 0 1.2em; }
+.prose-writing h2 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: -0.005em;
+  margin: 2em 0 0.6em;
+}
+.prose-writing h3 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 21px;
+  margin: 1.6em 0 0.4em;
+}
+.prose-writing a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--accent);
+  text-decoration: none;
+}
+.prose-writing a:hover { color: var(--accent); }
+.prose-writing blockquote {
+  border-left: 2px solid var(--accent);
+  margin: 1.5em 0;
+  padding-left: 1.2em;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.prose-writing code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+.prose-writing pre {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  line-height: 1.55;
+  background: var(--bg-soft);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 16px 18px;
+  margin: 1.4em 0;
+  overflow-x: auto;
+}
+.prose-writing pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+}
+.prose-writing ul, .prose-writing ol {
+  padding-left: 1.4em;
+  margin: 0 0 1.2em;
+}
+.prose-writing li { margin: 0.3em 0; }
+.prose-writing hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 2.5em 0;
+}
+
+/* rehype-pretty-code line numbers + highlights. */
+[data-rehype-pretty-code-figure] pre { padding-inline: 0; }
+[data-rehype-pretty-code-figure] code {
+  display: grid;
+  counter-reset: line;
+}
+[data-rehype-pretty-code-figure] [data-line] {
+  padding: 0 1rem;
+}
